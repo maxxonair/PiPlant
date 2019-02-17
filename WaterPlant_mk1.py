@@ -13,10 +13,21 @@ GPIO.setwarnings(False)
 GPIO.setup(21,GPIO.OUT)
 print "Water plant mk1: RUN"
 
+pinList = [21, 26, 20, 16]
+
+# Set all Pump pins to high (switch off)
+for i in pinList:
+        GPIO.setup(i, GPIO.OUT)
+        GPIO.output(i, GPIO.HIGH)
+
+% Main loop (endless)
 while True:
-	print "Motor on"
-	GPIO.output(channel_motor,GPIO.HIGH)
-	time.sleep(WaitingTime_motorON)
-	GPIO.output(channel_motor,GPIO.LOW)
-	print "Motor off"
-	time.sleep(WaitingTime_motorOFF)
+	# Water 
+        print "Pump on"
+        GPIO.output(21,GPIO.LOW)
+        time.sleep(3)
+        print "Pump off"
+        GPIO.output(21,GPIO.HIGH)
+        time.sleep(300)
+	# Take moisture measurement
+print "Finish"
