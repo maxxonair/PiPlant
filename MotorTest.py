@@ -10,13 +10,13 @@ pinList = [21, 26, 20, 16]
 
 for i in pinList:
         GPIO.setup(i, GPIO.OUT)
-        GPIO.output(i, GPIO.HIGH)
+        GPIO.output(i, GPIO.LOW)
 
 while True:
 	print "Motor on"
-	GPIO.output(21,GPIO.LOW)
-	time.sleep(3)
+	GPIO.output(16,GPIO.HIGH)
+	time.sleep(2)
 	print "Motor off" 
-	GPIO.output(21,GPIO.HIGH)
+	GPIO.output(16,GPIO.LOW)
 	time.sleep(15)
 print "Finish"
