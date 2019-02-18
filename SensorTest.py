@@ -2,15 +2,15 @@ import RPi.GPIO as GPIO
 import time
 
 #GPIO setup
-channel = 2
+channel = 3
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
 
 def callback(channel):
 	if GPIO.input(channel):
-		print("no water detected")
+		print(GPIO.input(channel))
 	else:
-		print("water detected")
+		print(GPIO.input(channel))
 
 #GPIO.add_event_detect(channel, GPIO.BOTH, bouncetime=300)
 #GPIO.add_event_callback(channel, callback)
