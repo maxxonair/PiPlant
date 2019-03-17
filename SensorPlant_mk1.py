@@ -14,17 +14,17 @@ smtp_password = "SG.LKwOB3lxTOeeS57JaS43KA.ovlLKIFanwbpEtVAK9ekMEhjquXuKO3KcvMn0
 smtp_host = "smtp.sendgrid.net" 
 smtp_port = 25
 smtp_sender = "maxbr4un@gmail.com"
-smtp_receiver = "maxx2x@gmx.de" 
+smtp_receiver = "mail@gmail.com" 
 
 message_aloe = """From: Home PiPlant <maxbr4un@gmail.com>
-To: Max <maxx2x@gmx.de>
+To: Max <mail@gmail.com>
 Subject: Home PiPlant need some water
 
 Aloe needs water 
 """
 
 message_palmi = """From: Home PiPlant <maxbr4un@gmail.com>
-To: Max <maxx2x@gmx.de>
+To: Max <mail@gmail.com>
 Subject: Home PiPlant need some water
 
 Palmi needs water 
