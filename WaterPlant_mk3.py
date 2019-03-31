@@ -14,18 +14,19 @@ import smtplib
 import datetime
 
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 
-print "Water plant mk2: RUN"
-print "Date Time Aloe Palm"
+print "Water plant mk3: RUN"
 # Pin list for motor actuators
 pin_Motor = [21, 26, 20, 16]
 
 def Water_Plant(water_time, pin):
 	# Water 
-	print("Pump %s cmd: ON" % (str(pin)))
+	print ("Pump %s cmd: ON" % (str(pin)))
         GPIO.output(pin,GPIO.LOW)
         time.sleep(water_time)
-        print("Pump %s cmd: OFF" % (str(pin)))
+        print ("Pump %s cmd: OFF" % (str(pin)))
         GPIO.output(pin,GPIO.HIGH)
 
 
@@ -34,11 +35,6 @@ for i in pin_Motor:
         GPIO.setup(i, GPIO.OUT)
         GPIO.output(i, GPIO.HIGH)
 
-for i in pinList_Sensor:
-	GPIO.setup(i, GPIO.IN)
-
-mailsent_Aloe = False
-mailsent_Palmi= False
 # Main loop (endless)
 while True:
 	#--------------------------------------------------
@@ -49,16 +45,16 @@ while True:
 	if now.hour>7 and  now.hour<23:
 		# Water plant:
 		Watering_time = 1.1
-		if now.hour==8 and now.minute<15:
+		if now.hour == 8  and now.minute < 15 :
 			Water_Plant(Watering_time,pin_Motor[3])
 			time.sleep(Watering_time)
 			Water_Plant(Watering_time,pin_Motor[2]) 
-			print("%s %s Plants watered morning" % (str(now.hour), str(now.minute))
-		if now.hour==21 and now.minute<15:
+			print ("%s %s Plants watered - morning" % (str(now.hour), str(now.minute)))
+		if now.hour == 21 and now.minute < 15 :
 			Water_Plant(Watering_time,pin_Motor[3])
 			time.sleep(Watering_time)
 			Water_Plant(Watering_time,pin_Motor[2])
-			print("%s %s Plants watered evening" % (str.now.hour), str(now.minute))
+			print ("%s %s Plants watered - evening" % (str(now.hour), str(now.minute)))
 	#------------------------------------------------
 	# Check reservoir water level
 	# TBD
