@@ -112,9 +112,9 @@ while True:
 		# Water plant:
 		Watering_time = 1.1
 		if PALM==1:
-			Water_Plant(Watering_time,pin_Motor[4]) 
+			Water_Plant(Watering_time,pin_Motor[3]) 
 		if ALOE==1:
-			Water_Plant(Watering_time,pin_Motor[3])
+			Water_Plant(Watering_time,pin_Motor[2])
 	#------------------------------------------------
 	# Check reservoir water level
 	# TBD
